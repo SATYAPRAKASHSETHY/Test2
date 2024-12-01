@@ -1,0 +1,192 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SATHYA Quiz Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Wellcome 🥰 Surprise Test:2 </h1>
+
+    -- Registration Form --
+    <div id="registration-form">
+      <h2>Enter Details to Start the Quiz</h2>
+      <form id="form">
+        <label>
+          Name:
+          <input type="text" id="name" required>
+        </label><br><br>
+        <label>
+          Roll Number:
+          <input type="text" id="roll" required>
+        </label><br><br>
+        <label>
+          CollageEmail:
+          <input type="email" id="email" required>
+        </label><br><br>
+        <label>
+          Batch:
+          <select id="batch" required>
+            <option value="5CAI02">5CAI02</option>
+            <option value="5CSD01">5CSD01</option>
+            <option value="5CSG01">5CSG01</option>
+            <option value="5CIT01">5CIT01</option>
+            <option value="5CBD01">5CBD01</option>
+            <option value="5CAI01">5CAI01</option>
+            <option value="5CDV01">5CDV01</option>
+            <option value="5CBC01">5CBC01</option>
+            <option value="5CSD02">5CSD02</option>
+            <option value="5IST02">5IST02</option>
+            <option value="5IST01">5IST01</option>
+            <option value="5CIT02">5CIT02</option>
+            <option value="5CSG02">5CSG02</option>
+            <option value="5CCS02">5CCS02</option>
+            <option value="5CCS01">5CCS01</option>
+          </select>
+        </label>
+        <br><br>
+        <button type="submit">Start Quiz</button>
+      </form>
+    </div>
+
+    !-- Quiz Content --
+    <div id="quiz-container" class="hidden">
+      <h2>Quiz (20 minutes)</h2>
+      <div id="timer">Time Left: 20:00</div>
+      <form id="quiz-form">
+        <p>1. What is 2 + 2?</p>
+        <label><input type="radio" name="q1" value="3"> 3</label><br>
+        <label><input type="radio" name="q1" value="4"> 4</label><br>
+        <label><input type="radio" name="q1" value="5"> 5</label><br>
+
+        <p>2. Capital of France?</p>
+        <label><input type="radio" name="q2" value="Paris"> Paris</label><br>
+        <label><input type="radio" name="q2" value="Rome"> Rome</label><br>
+        <label><input type="radio" name="q2" value="London"> London</label><br>
+
+        <button type="submit">Finish Quiz</button>
+      </form>
+    </div>
+
+    !-- Final Score and Report --
+    <div id="report-container" class="hidden">
+      <div id="report">
+        <div class="report-header">
+          <img src="sathya_Logo.png" alt="Logo" class="report-logo">
+          <img src="imarticus_ogo.png" alt="Logo" class="report-logo">
+          <h1>Quiz Report</h1>
+          <h3>Surprise Test</h3>
+        </div>
+        <div class="report-details">
+          <p id="report-name"><strong>Name:</strong> </p>
+          <p id="report-roll"><strong>Roll Number:</strong> </p>
+          <p id="report-email"><strong>Email:</strong> </p>
+          <p id="report-batch"><strong>Batch:</strong> </p>
+          <p id="report-score"><strong>Score:</strong> </p>
+        </div>
+      </div>
+      <button id="download-button">Download Report</button>
+      <button id="close-button">Close</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SATHYA Quiz Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome 🥰 Surprise Test:2 </h1>
+
+    <!-- Registration Form -->
+    <div id="registration-form">
+      <h2>Enter Details to Start the Quiz</h2>
+      <form id="form">
+        <label>
+          Name:
+          <input type="text" id="name" required>
+        </label><br><br>
+        <label>
+          Roll Number:
+          <input type="text" id="roll" required>
+        </label><br><br>
+        <label>
+          College Email:
+          <input type="email" id="email" required>
+        </label><br><br>
+        <label>
+          Batch:
+          <select id="batch" required>
+            <option value="5CAI02">5CAI02</option>
+            <option value="5CSD01">5CSD01</option>
+            <option value="5CSG01">5CSG01</option>
+            <option value="5CIT01">5CIT01</option>
+            <option value="5CBD01">5CBD01</option>
+            <option value="5CAI01">5CAI01</option>
+            <option value="5CDV01">5CDV01</option>
+            <option value="5CBC01">5CBC01</option>
+            <option value="5CSD02">5CSD02</option>
+            <option value="5IST02">5IST02</option>
+            <option value="5IST01">5IST01</option>
+            <option value="5CIT02">5CIT02</option>
+            <option value="5CSG02">5CSG02</option>
+            <option value="5CCS02">5CCS02</option>
+            <option value="5CCS01">5CCS01</option>
+          </select>
+        </label>
+        <br><br>
+        <button type="submit">Start Quiz</button>
+      </form>
+    </div>
+
+    <!-- Fullscreen Button -->
+    <button id="fullscreen-button" class="hidden">Go Fullscreen</button>
+
+    <!-- Quiz Content -->
+    <div id="quiz-container" class="hidden">
+      <h2>Quiz (20 minutes)</h2>
+      <div id="timer">Time Left: 20:00</div>
+      <form id="quiz-form">
+        <!-- Questions will be dynamically added here by JavaScript -->
+      </form>
+      
+    </div>
+
+    <!-- Final Score and Report -->
+    <div id="report-container" class="hidden">
+      <div id="report">
+        <div class="report-header">
+          <img src="sathya_Logo.png" alt="Logo" class="report-logo">
+          <img src="imarticus_ogo.png" alt="Logo" class="report-logo">
+          <h1>Quiz Report</h1>
+          <h3>Surprise Test</h3>
+        </div>
+        <div class="report-details">
+          <p id="report-name"><strong>Name:</strong> </p>
+          <p id="report-roll"><strong>Roll Number:</strong> </p>
+          <p id="report-email"><strong>Email:</strong> </p>
+          <p id="report-batch"><strong>Batch:</strong> </p>
+          <p id="report-score"><strong>Score:</strong> </p>
+        </div>
+      </div>
+      <button id="download-button">Download Report</button>
+      <button id="close-button">Close</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas"></script>
+  <script src="script.js"></script>
+</body>
+</html>
